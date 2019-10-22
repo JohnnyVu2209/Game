@@ -11,27 +11,28 @@ namespace Main
         Board Game = new Board(3, 4, 6);
         Player A = new Player("A");
         Player B = new Player("B");
-   
+
 
         public void PlayGame()
         {
             Game.PrintGame();
-            while(true)
+            while (true)
             {
                 A.PickBall(Game);
                 Game.PrintGame();
                 if (Game.IsGameOver())
                 {
-                    Console.WriteLine("Player A lose");
+                    Console.WriteLine("Player {0} lose", A.GetName());
                     break;
                 }
                 B.PickBall(Game);
                 Game.PrintGame();
-                if(Game.IsGameOver())
+                if (Game.IsGameOver())
                 {
-                    Console.WriteLine("Player B lose");
+                    Console.WriteLine("Player {0} lose", B.GetName());
                     break;
                 }
             }
+        }
     }
 }

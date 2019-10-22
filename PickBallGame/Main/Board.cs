@@ -12,11 +12,38 @@ namespace Main
         public void PickBall(int g, int b)
         {
             if (g == 1)
-                G1 -= b;
+            {
+                if(G1 == 0)
+                {
+                    Console.WriteLine("There is no more ball in this group for you to pick");
+                    Console.WriteLine("you will lose your turn");
+                    
+                }
+                else
+                    G1 -= b;
+            }
             else if (g == 2)
-                G2 -= b;
+            {
+                if (G2 == 0)
+                {
+                    Console.WriteLine("There is no more ball in this group for you to pick");
+                    Console.WriteLine("you will lose your turn");
+
+                }
+                else
+                    G2 -= b;
+            }
             else
-                G3 -= b;
+
+            {
+                if (G3 == 0)
+                {
+                    Console.WriteLine("There is no more ball in this group for you to pick");
+                    Console.WriteLine("you will lose your turn");
+
+                }
+                else
+                    G3 -= b; }
         }
         public void PrintGame()
         {
